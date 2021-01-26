@@ -1,10 +1,12 @@
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import styled from 'styled-components';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
-
+import Head from '../src/components/Head';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -25,21 +27,39 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head />
       <QuizContainer>
         <Widget>
           <Widget.Header>
             <h1>Titulo aqui</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>AAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+            <form onSubmit={function (e) {
+              e.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('SUBMIT');
+            }}
+            >
+              <input
+                placeholder="Seu nome aqui"
+                //  eslint-disable-next-line func-names
+                onChange={function (e) {
+                  // name = e.target.value;
+                  setName(e.target.value);
+                }}
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
-
         <Widget>
-
-
           <Widget.Content>
             <h1>Quizes da galera</h1>
             <p>AAAAAAAAAAAAAAAAAAAAAAAAAA</p>
@@ -47,7 +67,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/olliveer" />
+      <GitHubCorner projectUrl="https://github.com/Olliveer/aluraquiz" />
     </QuizBackground>
   );
 }

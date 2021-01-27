@@ -1,5 +1,5 @@
 {
-    "bg": "https://c.wallhere.com/photos/ad/51/1920x1080_px_d_day_World_War_II-1193373.jpg!d?resize=1536%2C1208&ssl=1",
+    "bg": "https://images2.alphacoders.com/712/thumb-1920-712161.png?resize=1536%2C1208&ssl=1",
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
@@ -31,12 +31,12 @@
     ],
     "theme": {
       "colors": {
-        "primary": "#000",
-        "secondary": "#FFF",
-        "mainBg": "#00000070",
+        "primary": "#cddc39",
+        "secondary": "#f50057",
+        "mainBg": "#FFFFFF",
         "contrastText": "#000",
-        "wrong": "#B00020",
-        "success": "#4CAF50"
+        "wrong": "#b2102f",
+        "success": "#91ff35"
       },
       "borderRadius": "4px"
     }

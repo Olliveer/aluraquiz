@@ -1,7 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  background-color: #00000070;
+  background-color: #FFFFFF70;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -11,7 +12,7 @@ const FooterWrapper = styled.footer`
     margin-right: 23px;
   }
   a {
-    color: white;
+    color: #000;
     text-decoration: none;
     transition: .3s;
     &:hover,
@@ -22,10 +23,14 @@ const FooterWrapper = styled.footer`
       text-decoration: underline;
     }
   }
+  P {
+    color: #000;
+  }
 `;
 
 export default function Footer(props) {
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />

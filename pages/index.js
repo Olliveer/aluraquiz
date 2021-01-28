@@ -10,6 +10,8 @@ import Head from '../src/components/Head';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
+import ExternalQuizList from '../src/components/ExternalQuizList';
+import QuizLogo from '../src/components/QuizLogo';
 
 export default function Home() {
   const router = useRouter();
@@ -18,14 +20,19 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <Head />
       <QuizContainer>
+      <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Titulo aqui</h1>
+            <h1>I need Healing Quiz</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={(e) => {
               e.preventDefault();
-              router.push(`/quiz?name=${name}`);
+              router.push({
+                pathname: '/quiz',
+                query: { name },
+              });
+              // router.push(`/quiz?name=${name}`);
             }}
             >
               <Input
@@ -43,8 +50,23 @@ export default function Home() {
         </Widget>
         <Widget>
           <Widget.Content>
-            <h1>Quizes da galera</h1>
-            <p>AAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+            {/* <ExternalQuizList hasName={hasName}>
+              {db.external.map((url) => {
+                const prepareUrl = url
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '');
+
+                const [repoName, user] = prepareUrl.split('.');
+                return (
+                  <li key={url}>
+                    <Widget.Topic href={`/quiz/${user}__${repoName}?name=${name}`}>
+                      {`${user}/${repoName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ExternalQuizList> */}
           </Widget.Content>
         </Widget>
         <Footer />

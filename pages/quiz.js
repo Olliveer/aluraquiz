@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
@@ -10,10 +11,14 @@ import Loading from '../src/components/Loading';
 import AlternativesForm from '../src/components/AlternativeForm';
 
 function ResultWidget({ results }) {
+  const router = useRouter();
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        Confira seus resultados
+        <h3 style={{ margin: '3px', textTransform: 'uppercase' }}>
+          {`${router.query.name}`}
+        </h3>
       </Widget.Header>
       <Widget.Content>
         <p>
@@ -97,7 +102,7 @@ function QuestionWidget({
             onSubmit();
             setIsQuestionSubmited(false);
             setSelectedAlternative(undefined);
-          }, 3 * 1000);
+          }, 1 * 1000);
         }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
@@ -129,8 +134,8 @@ function QuestionWidget({
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-          {isQuestionSubmited && isCorrect && <p> Você acertou!</p>}
-          {isQuestionSubmited && !isCorrect && <p> Você errou!</p>}
+          {/* {isQuestionSubmited && isCorrect && <p> Você acertou!</p>}
+          {isQuestionSubmited && !isCorrect && <p> Você errou!</p>} */}
         </AlternativesForm>
       </Widget.Content>
     </Widget>

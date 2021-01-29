@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import QuizLogo from '../src/components/QuizLogo';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import Button from '../src/components/Button';
-import Loading from '../src/components/Loading';
-import AlternativesForm from '../src/components/AlternativeForm';
+import db from '../../db.json';
+import Widget from '../../src/components/Widget';
+import QuizLogo from '../../src/components/QuizLogo';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizContainer from '../../src/components/QuizContainer';
+import Button from '../../src/components/Button';
+import Loading from '../../src/components/Loading';
+import AlternativesForm from '../../src/components/AlternativeForm';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function ResultWidget({ results }) {
   const router = useRouter();
@@ -72,7 +73,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>

@@ -4,30 +4,54 @@
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
+        "image": "https://media.tenor.com/images/4160354a0c69c7f068634bf1f0304039/tenor.gif",
+        "title": "Quem são os irmãos Shimada?",
         "description": "Essa é pra aquecer",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Hanzo & DVA",
+          "Roadhog & Junkrat",
+          "Hanzo & Ganjo",
+          "Marcy & ana"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "https://media.tenor.com/images/ef402a61a2436eda6ae76313d7247a09/tenor.gif",
+        "title": "Qual o nome do SÁPARO do Bastion?",
+        "description": "PIU",
+        "answer": 1,
+        "alternatives": [
+          "Só passarin mesmo",
+          "Ganimedes",
+          "Birdo",
+          "Sabiá"
+        ]
+      },
+      {
+        "image": "https://media1.tenor.com/images/e9f86f3c391ad26b769e04b052c8084f/tenor.gif?itemid=15190220",
+        "title": "Quem é o heroi Brasileiro no jogo?",
+        "description": "BRBRBRBRBRB",
+        "answer": 3,
+        "alternatives": [
+          "Sombra",
+          "Ana",
+          "Reinhardt",
+          "Lucio"
+        ]
+      },
+      {
+        "image": "https://media.tenor.com/images/bd2f25bc8a298ecc2d0ea89e9342f3df/tenor.gif",
+        "title": "Qual o herói mais odiado no jogo e porque é o Doomfist?",
+        "description": "Rising uppercut!",
         "answer": 0,
         "alternatives": [
-          "background: linear-gradient(#e66465, #9198e5);",
-          "background: gradient(#e66465, #9198e5);"
+          "Fatos estão sendo ditos"
         ]
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/",
+      "https://harry-potter-quiz.lucianoweslen11.vercel.app/"
     ],
     "theme": {
       "colors": {

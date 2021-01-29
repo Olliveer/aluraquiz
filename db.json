@@ -51,7 +51,9 @@
     ],
     "external": [
       "https://aluraquiz-base.alura-challenges.vercel.app/",
-      "https://harry-potter-quiz.lucianoweslen11.vercel.app/"
+      "https://harry-potter-quiz.lucianoweslen11.vercel.app/",
+      "https://naruto-quiz-tau.vercel.app/",
+      "https://aluraquizpokemon.cesarrobertopg.vercel.app/"
     ],
     "theme": {
       "colors": {

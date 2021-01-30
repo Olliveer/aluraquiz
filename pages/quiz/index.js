@@ -11,11 +11,10 @@ import Button from '../../src/components/Button';
 import Loading from '../../src/components/Loading';
 import AlternativesForm from '../../src/components/AlternativeForm';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
-import Link from '../../src/components/Link';
 
 function ResultWidget({ results }) {
   const router = useRouter();
-  const result = results.filter((x) => x).length;
+  const points = results.filter((x) => x).length;
   return (
     <Widget>
       <Widget.Header>
@@ -32,11 +31,11 @@ function ResultWidget({ results }) {
             const isAcerto = resultAtual === true;
             return isAcerto ? somaAtual + 1 : somaAtual;
           }, 0)} */}
-          {result}
+          {points}
           {' '}
           perguntas sua pontuação é:
           {' '}
-          {result * 10}
+          {points * 10}
         </p>
         <ul>
           {results.map((result, index) => (

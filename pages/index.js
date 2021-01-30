@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import { connectToDatabase } from '../util/mongodb';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
@@ -13,8 +14,9 @@ import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Link from '../src/components/Link';
+import LeaderboardContainer from '../src/components/LeaderboardContainer';
 
-export default function Home() {
+export default function Home({ properties }) {
   const router = useRouter();
   const [name, setName] = useState('');
   return (
@@ -76,7 +78,6 @@ export default function Home() {
         >
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-
             <ul>
               {db.external.map((linkExterno) => {
                 const [projectName, githubUser] = linkExterno
@@ -94,6 +95,30 @@ export default function Home() {
             </ul>
           </Widget.Content>
         </Widget>
+
+        <LeaderboardContainer>
+          <LeaderboardContainer.Content>
+            <LeaderboardContainer.Header>
+              <h1>Leaderboards</h1>
+            </LeaderboardContainer.Header>
+            <ul>
+              {properties && properties.map((property, index) => (
+                <li key={property.name}>
+                  <LeaderboardContainer.Topic as={Link} href="/">
+                    {index + 1}
+                    {' '}
+                    ° Lugar:
+                    {property.name}
+                    {' '}
+                    <strong>{property.points}</strong>
+                    {' '}
+                    pontos
+                  </LeaderboardContainer.Topic>
+                </li>
+              ))}
+            </ul>
+          </LeaderboardContainer.Content>
+        </LeaderboardContainer>
         <Footer
           as={motion.footer}
           className="container"
@@ -104,4 +129,20 @@ export default function Home() {
       <GitHubCorner projectUrl="https://github.com/Olliveer/aluraquiz" />
     </QuizBackground>
   );
+}
+
+// eslint-disable-next-line no-unused-vars
+export async function getServerSideProps(context) {
+  const { db } = await connectToDatabase();
+
+  const data = await db.collection('stats').find().sort({ points: 1 }).limit(10)
+    .toArray();
+
+  const properties = data.map((property) => ({
+    name: property.name,
+    points: property.points,
+  }));
+  return {
+    props: { properties },
+  };
 }

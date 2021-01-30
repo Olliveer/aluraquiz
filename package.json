@@ -9,7 +9,9 @@
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "framer-motion": "^3.2.2-rc.1",
+    "mongodb": "^3.6.3",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",

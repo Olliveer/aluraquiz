@@ -6,7 +6,6 @@ function IndexPage() {
     <div>
       <Head>
         {/* Primary Meta Tags  */}
-        <title>OverQuiz</title>
         <meta name="title" content="OverQuiz" />
         <meta name="description" content="Um quiz sobre o jogo Overwatch" />
 

@@ -52,7 +52,13 @@ export default function Home() {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              <Button type="submit" disabled={name.length === 0}>
+              <Button
+                as={motion.button}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                type="submit"
+                disabled={name.length === 0}
+              >
                 {`Jogar ${name}`}
               </Button>
             </form>
@@ -90,13 +96,9 @@ export default function Home() {
         </Widget>
         <Footer
           as={motion.footer}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          variants={{
-            show: { opacity: 1 },
-            hidden: { opacity: 0 },
-          }}
-          initial="hidden"
-          animate="show"
+          className="container"
+          whileHover={{ scale: 1.2, rotate: 360 }}
+          whileTap={{ scale: 0.8, rotate: -90, borderRadius: '100%' }}
         />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/Olliveer/aluraquiz" />

@@ -7,6 +7,9 @@ const Widget = styled.div`
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 14px;
   overflow: hidden;
+  @media screen and (max-width:500px){
+    z-index:1;
+  }
 
   h1 h2 h3 {
     font-size: 16px;
@@ -64,6 +67,14 @@ display: block;
 &:focus {
   opacity: .5;
 }
+`;
+
+Widget.Loading = styled.div`
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: ${({ theme }) => theme.colors.mainBg};
+  border-radius: 0;
+  overflow: hidden;
 `;
 
 export default Widget;

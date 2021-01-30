@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import QuizLogo from '../../src/components/QuizLogo';
@@ -10,16 +11,18 @@ import Button from '../../src/components/Button';
 import Loading from '../../src/components/Loading';
 import AlternativesForm from '../../src/components/AlternativeForm';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
+import Link from '../../src/components/Link';
 
 function ResultWidget({ results }) {
   const router = useRouter();
+  const result = results.filter((x) => x).length;
   return (
     <Widget>
       <Widget.Header>
         Confira seus resultados
-        <h3 style={{ margin: '3px', textTransform: 'uppercase' }}>
+        <h4 style={{ margin: '3px', textTransform: 'uppercase' }}>
           {`${router.query.name}`}
-        </h3>
+        </h4>
       </Widget.Header>
       <Widget.Content>
         <p>
@@ -29,9 +32,11 @@ function ResultWidget({ results }) {
             const isAcerto = resultAtual === true;
             return isAcerto ? somaAtual + 1 : somaAtual;
           }, 0)} */}
-          {results.filter((x) => x).length}
+          {result}
           {' '}
-          perguntas
+          perguntas sua pontuação é:
+          {' '}
+          {result * 10}
         </p>
         <ul>
           {results.map((result, index) => (
@@ -41,6 +46,7 @@ function ResultWidget({ results }) {
               {' '}
               Resultado:
               {result === true ? ' Acertou' : ' Errou!'}
+              {' '}
             </li>
           ))}
         </ul>
@@ -53,11 +59,11 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        Pã Pã rããããã Carregando...
       </Widget.Header>
-      <Widget.Content>
+      <Widget.Loading>
         <Loading />
-      </Widget.Content>
+      </Widget.Loading>
     </Widget>
   );
 }
@@ -132,7 +138,13 @@ function QuestionWidget({
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
-          <Button type="submit" disabled={!hasAlternativeSelected}>
+          <Button
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            type="submit"
+            disabled={!hasAlternativeSelected}
+          >
             Confirmar
           </Button>
           {/* {isQuestionSubmited && isCorrect && <p> Você acertou!</p>}
@@ -154,7 +166,7 @@ export default function QuizPage() {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([]);
   const totalQuestions = db.questions.length;
-  const [questionIndex, setQuestionIndex] = React.useState(0);
+  const [questionIndex, setQuestionIndex] = useState(0);
   const question = db.questions[questionIndex];
 
   function addResult(result) {

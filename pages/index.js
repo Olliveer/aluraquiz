@@ -99,7 +99,7 @@ export default function Home({ properties }) {
         <LeaderboardContainer>
           <LeaderboardContainer.Content>
             <LeaderboardContainer.Header>
-              <h1>Leaderboards</h1>
+              <h1>Top 10 jogadores</h1>
             </LeaderboardContainer.Header>
             <ul>
               {properties && properties.map((property, index) => (

@@ -104,7 +104,7 @@ export default function Home({ properties }) {
             </LeaderboardContainer.Header>
             <ul>
               {properties && properties.map((property, index) => (
-                <li key={property.name}>
+                <li key={`${property.id}`}>
                   <LeaderboardContainer.Topic as={Link} href="/">
                     {index + 1}
                     {' '}
@@ -141,6 +141,7 @@ export async function getServerSideProps(context) {
     .toArray();
 
   const properties = data.map((property) => ({
+    id: String(property._id),
     name: property.name,
     points: property.points,
   }));

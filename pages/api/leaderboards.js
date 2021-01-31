@@ -10,9 +10,6 @@ const handler = async (request, response) => {
       case 'GET':
         const data = await db.collection('stats').find().sort({ points: -1 }).limit(10)
           .toArray();
-        response.setHeader('Access-Control-Allow-Credentials', true);
-        response.setHeader('Access-Control-Allow-Origin', '*');
-        response.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
         response.status(200).json(data);
         break;
       case 'POST':
@@ -25,12 +22,12 @@ const handler = async (request, response) => {
           name,
           points,
         });
-        response.setHeader('Access-Control-Allow-Credentials', true);
-        response.setHeader('Access-Control-Allow-Origin', '*');
-        response.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
         response.status(200).json(res.ops[0]);
         break;
       default:
+        response.setHeader('Access-Control-Allow-Credentials', true);
+        response.setHeader('Access-Control-Allow-Origin', '*');
+        response.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
         response.setHeader('Allow', ['GET', 'POST', 'PUT']);
         response.status(405).end(`Method ${method} Not Allowed`);
     }

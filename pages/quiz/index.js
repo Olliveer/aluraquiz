@@ -12,6 +12,7 @@ import Button from '../../src/components/Button';
 import Loading from '../../src/components/Loading';
 import AlternativesForm from '../../src/components/AlternativeForm';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
+import Footer from '../../src/components/Footer';
 
 function ResultWidget({ results }) {
   const router = useRouter();
@@ -22,12 +23,15 @@ function ResultWidget({ results }) {
   const handleSubmit = ((e) => {
     e.preventDefault();
     const data = { name, points };
-
-    const response = axios.post();
-
-    useEffect(() => {});
-
-    console.log(data);
+    try {
+      const response = axios.post(
+        `${process.env.NEXT_PUBLIC_URL}/api/leaderboards`,
+        data,
+      );
+      router.push('/');
+    } catch (err) {
+      console.log(err.response.data.error);
+    }
   });
 
   return (
@@ -46,11 +50,11 @@ function ResultWidget({ results }) {
             const isAcerto = resultAtual === true;
             return isAcerto ? somaAtual + 1 : somaAtual;
           }, 0)} */}
-          {points}
+          {results.filter((x) => x).length}
           {' '}
           perguntas sua pontuação é:
           {' '}
-          {points * 10}
+          {results.filter((x) => x).length * 10}
         </p>
         <ul>
           {results.map((result, index) => (
@@ -64,12 +68,17 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
           <input type="hidden" value={name} onChange={(e) => { setName(router.query.name); }} />
           <input type="hidden" value={points} onChange={(e) => { setTotalPoints(points); }} />
-          <button type="submit">
+          <Button
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            type="submit"
+          >
             Será que estou no top 10?
-          </button>
+          </Button>
         </form>
       </Widget.Content>
     </Widget>
@@ -80,7 +89,7 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
-        Pã Pã rããããã Carregando...
+        Pã Pã rããããã...
       </Widget.Header>
       <Widget.Loading>
         <Loading />
@@ -229,6 +238,12 @@ export default function QuizPage() {
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+        <Footer
+          as={motion.footer}
+          className="container"
+          whileHover={{ scale: 1.2, rotate: 360 }}
+          whileTap={{ scale: 0.8, rotate: -90, borderRadius: '100%' }}
+        />
       </QuizContainer>
     </QuizBackground>
   );

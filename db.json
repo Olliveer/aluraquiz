@@ -11,13 +11,13 @@
         "alternatives": [
           "Hanzo & DVA",
           "Roadhog & Junkrat",
-          "Hanzo & Ganjo",
+          "Hanzo & Genji",
           "Marcy & ana"
         ]
       },
       {
         "image": "https://media.tenor.com/images/ef402a61a2436eda6ae76313d7247a09/tenor.gif",
-        "title": "Qual o nome do SÁPARO do Bastion?",
+        "title": "Qual o nome do passarinho do Bastion?",
         "description": "PIU",
         "answer": 1,
         "alternatives": [
@@ -46,6 +46,18 @@
         "answer": 0,
         "alternatives": [
           "Fatos estão sendo ditos"
+        ]
+      },
+      {
+        "image": "https://media.tenor.com/images/0de6957a5bfe8898fa1f592a484b4732/tenor.gif",
+        "title": "Qual tank tem mais pontos de vida?",
+        "description": "To com ouro em tudo...af",
+        "answer": 2,
+        "alternatives": [
+          "D.Va",
+          "Orisa",
+          "Roadhog",
+          "Reinhardt"
         ]
       }
     ],

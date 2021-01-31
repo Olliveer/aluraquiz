@@ -5,7 +5,7 @@
 </h2>
 
 <h1 align="center">
-  <img src="blob:https://imgur.com/660e299f-3187-4d2d-9b38-9af4d864d633" alt="Alura" width="1000px" />
+  <img src="https://i.imgur.com/9cUA66k.png" alt="Alura" width="1000px" />
 </h1>
 
 

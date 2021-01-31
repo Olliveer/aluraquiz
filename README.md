@@ -1,8 +1,6 @@
 <h2 align="center">
-  <img src="https://img.shields.io/badge/Imersão%Alura%-00b8d3?style=for-the-badge" alt="Imersão Alura" />
   <img src="https://img.shields.io/badge/web%3F-Yes-00b8d3?style=for-the-badge" alt="Sistema web Yes" />
   <img src="https://img.shields.io/badge/server%3F-yes-00b8d3?style=for-the-badge" alt="Server Yes" />
-  <img src="https://img.shields.io/badge/app mobile%3F-yes-00b8d3?style=for-the-badge" alt="Aplicativo mobile Yes" />
   <img src="https://img.shields.io/github/license/matheusfelipeog/proffy?color=00b8d3&style=for-the-badge" alt="License" />
 </h2>
 
@@ -31,7 +29,7 @@ O projeto desenvolvido na [Imersão React Alura](https://www.alura.com.br/imersa
 ## 📸 Screenshots
 
 <h1 align="center">
-  <img src="blob:https://imgur.com/192e1744-3635-41fc-ad02-d332d8ccf6ac" alt="questionPage" width="1000px" />
+  <img src="https://i.imgur.com/YWuvBI2.png" alt="questionPage" width="1000px" />
 </h1>
 
 ## 🍃 Rotas do Backend
@@ -52,7 +50,11 @@ This project was developed using the following technologies:
 ## ⚙ Instalação e Start
 ```bash
 # Clone this repository
-$ git clone https://github.com/Olliveer/Happy.git
+$ git clone https://github.com/Olliveer/aluraquiz.git
+
+# Mongodb
+$ Renomeie o arquivo .env.local.example para .env.local e connfigure o seu uri do mongodb e o nome do bd
+$ em deploy não esquece de cadastrar as Environment Variables em seu projeto que são as mesmas do .env.local
 
 # Install dependencies
 $ yarn install

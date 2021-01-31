@@ -97,7 +97,16 @@ export default function Home({ properties }) {
           </Widget.Content>
         </Widget>
 
-        <LeaderboardContainer>
+        <LeaderboardContainer
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <LeaderboardContainer.Content>
             <LeaderboardContainer.Header>
               <h1>Top 10 jogadores</h1>

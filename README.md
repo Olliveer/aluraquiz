@@ -5,7 +5,7 @@
 </h2>
 
 <h1 align="center">
-  <img src="https://i.imgur.com/9cUA66k.png" alt="Alura" width="1000px" />
+  <img src="https://i.imgur.com/8V13xVm.png" alt="Alura" width="1000px" />
 </h1>
 
 
@@ -15,7 +15,6 @@
 - [Screenshots](#-screenshots)
 - [Techs](#-techs)
 - [Instalação e Start](#-instalação-e-start)
-- [Contribuições](#-contribuições)
 - [License](#-license)
 
 

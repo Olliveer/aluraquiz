@@ -19,6 +19,7 @@ import LeaderboardContainer from '../src/components/LeaderboardContainer';
 export default function Home({ properties }) {
   const router = useRouter();
   const [name, setName] = useState('');
+  const [points, setPoints] = useState(null);
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head />
@@ -135,7 +136,7 @@ export default function Home({ properties }) {
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
 
-  const data = await db.collection('stats').find().sort({ points: 1 }).limit(10)
+  const data = await db.collection('stats').find().sort({ points: -1 }).limit(10)
     .toArray();
 
   const properties = data.map((property) => ({

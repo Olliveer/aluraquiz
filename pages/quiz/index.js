@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import QuizLogo from '../../src/components/QuizLogo';
@@ -14,7 +15,21 @@ import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function ResultWidget({ results }) {
   const router = useRouter();
-  const points = results.filter((x) => x).length;
+  const [name, setName] = useState(router.query.name);
+  const [totalPoints, setTotalPoints] = useState(null);
+  const points = results.filter((x) => x).length * 10;
+
+  const handleSubmit = ((e) => {
+    e.preventDefault();
+    const data = { name, points };
+
+    const response = axios.post();
+
+    useEffect(() => {});
+
+    console.log(data);
+  });
+
   return (
     <Widget>
       <Widget.Header>
@@ -49,6 +64,13 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
+        <form onSubmit={handleSubmit} >
+          <input type="hidden" value={name} onChange={(e) => { setName(router.query.name); }} />
+          <input type="hidden" value={points} onChange={(e) => { setTotalPoints(points); }} />
+          <button type="submit">
+            Será que estou no top 10?
+          </button>
+        </form>
       </Widget.Content>
     </Widget>
   );

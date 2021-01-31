@@ -52,7 +52,7 @@ This project was developed using the following technologies:
 $ git clone https://github.com/Olliveer/aluraquiz.git
 
 # Mongodb
-$ Renomeie o arquivo .env.local.example para .env.local e connfigure o seu uri do mongodb e o nome do bd
+$ Renomeie o arquivo .env.local.example para .env.local e configure o seu uri do mongodb e o nome do bd
 $ em deploy não esquece de cadastrar as Environment Variables em seu projeto que são as mesmas do .env.local
 
 # Install dependencies

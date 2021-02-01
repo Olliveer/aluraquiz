@@ -16,6 +16,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Link from '../src/components/Link';
 import LeaderboardContainer from '../src/components/LeaderboardContainer';
+import ShareContainer from '../src/components/ShareContainer';
 
 export default function Home({ properties }) {
   const router = useRouter();
@@ -95,6 +96,7 @@ export default function Home({ properties }) {
               })}
             </ul>
           </Widget.Content>
+          <ShareContainer />
         </Widget>
 
         <LeaderboardContainer

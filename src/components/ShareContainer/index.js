@@ -6,7 +6,7 @@ import {
 } from 'next-share';
 
 const Share = styled.footer`
-  background-color: #ffffff10;
+  background-color: #2196f360;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -22,8 +22,8 @@ export default function ShareContainer() {
         quote="Um quiz desenvolvido na imersão React/Next.js da Alura."
         hashtag="#AluraQuiz"
       >
-        <div style={{ marginRight: 10, width: 32, height: 32 }}>
-          <FacebookIcon size={32} round />
+        <div style={{ marginRight: 15, width: 32, height: 32 }}>
+          <FacebookIcon size={40} round />
         </div>
       </FacebookShareButton>
 
@@ -33,8 +33,8 @@ export default function ShareContainer() {
         windowWidth={660}
         windowHeight={460}
       >
-        <div style={{ marginRight: 10, width: 32, height: 32 }}>
-          <RedditIcon size={32} round />
+        <div style={{ marginRight: 15, width: 32, height: 32 }}>
+          <RedditIcon size={40} round />
         </div>
       </RedditShareButton>
 
@@ -42,8 +42,8 @@ export default function ShareContainer() {
         url="https://aluraquiz.olliveer.vercel.app/"
         title="Um quiz desenvolvido na imersão React/Next.js da Alura."
       >
-        <div style={{ marginRight: 10, width: 32, height: 32 }}>
-          <TwitterIcon size={32} round />
+        <div style={{ marginRight: 15, width: 32, height: 32 }}>
+          <TwitterIcon size={40} round />
         </div>
       </TwitterShareButton>
 

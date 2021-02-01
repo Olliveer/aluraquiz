@@ -123,9 +123,11 @@ export default function Home({ properties }) {
                     {' '}
                     {property.name}
                     {' '}
+                    fez
+                    {' '}
                     <strong>{property.points}</strong>
                     {' '}
-                    fez pontos
+                    pontos
                   </LeaderboardContainer.Topic>
                 </li>
               ))}

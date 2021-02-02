@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
+import Lottie from 'react-lottie';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import QuizLogo from '../../src/components/QuizLogo';
@@ -106,6 +107,7 @@ function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+
   return (
     <Widget>
       <Widget.Header>
@@ -165,9 +167,7 @@ function QuestionWidget({
               </Widget.Topic>
             );
           })}
-          {/* <pre>
-            {JSON.stringify(question, null, 4)}
-          </pre> */}
+          {!isQuestionSubmited && (
           <Button
             as={motion.button}
             whileHover={{ scale: 1.1 }}
@@ -177,8 +177,9 @@ function QuestionWidget({
           >
             Confirmar
           </Button>
-          {/* {isQuestionSubmited && isCorrect && <p> Você acertou!</p>}
-          {isQuestionSubmited && !isCorrect && <p> Você errou!</p>} */}
+          )}
+          {isQuestionSubmited && isCorrect && <p> Você acertou!</p>}
+          {isQuestionSubmited && !isCorrect && <p> Você errou!</p>}
         </AlternativesForm>
       </Widget.Content>
     </Widget>

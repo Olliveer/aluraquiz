@@ -27,6 +27,7 @@ Widget.Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
   * {
@@ -62,7 +63,9 @@ display: block;
 
 &:hover,
 &:focus {
-  opacity: .5;
+  opacity: .9;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: #000;
 }
 `;
 

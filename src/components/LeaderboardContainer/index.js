@@ -17,6 +17,7 @@ const LeaderboardContainer = styled.div`
     z-index:1;
     display: none;
   }
+  
 
   h1 h2 h3 {
     font-size: 16px;
@@ -74,7 +75,9 @@ justify-content: center;
 
 &:hover,
 &:focus {
-  opacity: .5;
+  opacity: .9;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: #000;
 }
 `;
 

@@ -129,9 +129,6 @@ function QuestionWidget({
               </Widget.Topic>
             );
           })}
-          {/* <pre>
-            {JSON.stringify(question, null, 4)}
-          </pre> */}
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
